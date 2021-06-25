@@ -17,7 +17,8 @@ class CreateCursosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_categoria');
             $table->foreign('id_categoria')->references('id')->on('categorias');
-            $table->string('nombre');
+            $table->string('nombre_curso');
+            $table->string('imagen');
             $table->string('idioma');
             $table->text('direccion_url');
             $table->timestamps();

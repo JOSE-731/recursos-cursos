@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Curso;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class CursoController extends Controller
 {
@@ -14,7 +16,10 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        //Obtengo el nombre, imagen url y idioma de el curso
+        $cursos = DB::table('cursos')->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')->get();
+
+        return view('index', ['cursos' => $cursos]);
     }
 
     /**
