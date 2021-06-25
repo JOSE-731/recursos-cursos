@@ -87,4 +87,19 @@ class CursoController extends Controller
     {
         //
     }
+
+    public function frontend (){
+
+        $frontend = DB::table('cursos')->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')->where('id_categoria', '=', 1)->get();
+
+        return view('frontend', ['frontend' => $frontend]);
+    }
+
+    public function backend (){
+
+        $backend =  DB::table('cursos')->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')->where('id_categoria', '=', 2)->get();
+
+        return view('backend', ['backend' => $backend]);
+    }
+    
 }
