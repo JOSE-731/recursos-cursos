@@ -74,7 +74,7 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                       <h5 class="card-title">Categorias</h5>
-                      <a href="create/cursos" class="btn btn-primary">Acceder</a>
+                      <a href="create/categoria" class="btn btn-primary">Acceder</a>
                     </div>
                   </div>
               </div>
@@ -83,7 +83,7 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                       <h5 class="card-title">Cursos</h5>
-                      <a href="create/categoria" class="btn btn-primary">Acceder</a>
+                      <a href="create/cursos" class="btn btn-primary">Acceder</a>
                     </div>
                   </div>
               </div>

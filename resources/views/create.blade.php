@@ -55,6 +55,51 @@
             </ul>
         </div>
       </nav>
+
+      <div class="text">
+        <h1 class="text-center pt-4">Agregar curso</h1>
+      </div>
+
+      <div class="container pt-4">
+        <div class="row mb-3">
+              <div class="col-sm-8 mx-auto mt-2">
+                  <div class="card border-0 shadow">
+                      <div class="card-body">
+                        <form action="" method="POST" class="row g-3 needs-validation">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="name" placeholder="NAME" autocomplete="off">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="email" class="form-control" name="url" placeholder="URL" autocomplete="off">
+                            </div>
+                            <br/><br/>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="idioma" placeholder="IDIOMA" autocomplete="off">
+                            </div>
+                            <div class="col-sm-6">
+                                <select class="form-select form-control" aria-label="Default select example">
+                                    <option selected>CATEGORIA</option>
+                                    @foreach($categorias as $value)
+                                      <option value="{{$value->id  }}">{{ $value->nombre_categoria}}</option>
+                                    @endforeach
+                                 </select>
+                            </div>
+                            <br/><br/>
+                            <div class="col-sm-6">
+                                <input type="file" class="form-control" name="imagen" placeholder="seleccione una imagen" autocomplete="off">
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="col-auto">
+                                    @csrf
+                                    <button class="btn btn-primary form-control" type="submit">Guardar</button>
+                                </div>
+                            </div>
+                            </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

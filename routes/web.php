@@ -34,4 +34,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Rutas del crud de cursos y categorias
 Route::get('create/cursos', 'CursoController@welcomeCurso')->middleware('auth');
-Route::get('create/categoria', 'CursoController@welcomeCategoria')->middleware('auth');
+Route::get('create/categorias', 'CursoController@welcomeCategoria')->middleware('auth');

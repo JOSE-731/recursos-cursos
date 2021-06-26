@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use App\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -23,8 +24,9 @@ class CursoController extends Controller
     }
 
     public function welcomeCurso(){
+        $categorias = DB::table('categorias')->select('id', 'nombre_categoria')->get();
 
-        return view('create');
+        return view('create', ['categorias' => $categorias]);
     }
 
     public function welcomeCategoria(){
