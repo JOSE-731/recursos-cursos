@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 
+
 Route::get('index', 'CursoController@index');
 Route::get('frontend', 'CursoController@frontend');
 Route::get('backend', 'CursoController@backend');
