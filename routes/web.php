@@ -20,11 +20,18 @@ Route::get('/', function () {
 });
 
 
-
+//Muestra todos los cursos
 Route::get('index', 'CursoController@index');
+
+//Muestra todos los cursos segun la categoria que pertenezcan
 Route::get('frontend', 'CursoController@frontend');
 Route::get('backend', 'CursoController@backend');
 
+//Rutas del login
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Rutas del crud de cursos y categorias
+Route::get('create/cursos', 'CursoController@welcomeCurso')->middleware('auth');
+Route::get('create/categoria', 'CursoController@welcomeCategoria')->middleware('auth');

@@ -22,6 +22,16 @@ class CursoController extends Controller
         return view('index', ['cursos' => $cursos]);
     }
 
+    public function welcomeCurso(){
+
+        return view('create');
+    }
+
+    public function welcomeCategoria(){
+
+        return view('create_categoria');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

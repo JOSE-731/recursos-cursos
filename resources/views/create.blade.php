@@ -6,27 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>admin</title>
+    <title>create</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <a class="nav-link text-danger" href="home">INICIO</a>
+    <a class="nav-link text-danger" href="/home">INICIO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link text-danger" href="frontend">FRONTEND<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link text-danger" href="backend">BACKEND<span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-         
-        </div>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
@@ -67,28 +55,6 @@
             </ul>
         </div>
       </nav>
-
-      <div class="container">
-          <div class="row">
-              <div class="col col-6 pt-5">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Categorias</h5>
-                      <a href="create/cursos" class="btn btn-primary">Acceder</a>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="col col-6 pt-5">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Cursos</h5>
-                      <a href="create/categoria" class="btn btn-primary">Acceder</a>
-                    </div>
-                  </div>
-              </div>
-          </div>
-      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
