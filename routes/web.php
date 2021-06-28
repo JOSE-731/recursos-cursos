@@ -33,5 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Rutas del crud de cursos y categorias
-Route::get('create/cursos', 'CursoController@welcomeCurso')->middleware('auth');
-Route::get('create/categorias', 'CursoController@welcomeCategoria')->middleware('auth');
+Route::get('create/cursos', 'CursoController@create')->middleware('auth');
+
+Route::get('create/categorias', 'CategoriaController@create')->middleware('auth');
+Route::post('store', 'CategoriaController@store')->name('categoria');

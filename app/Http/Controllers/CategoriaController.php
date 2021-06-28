@@ -14,7 +14,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -24,7 +24,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('create_categoria');
     }
 
     /**
@@ -35,7 +35,11 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Categoria::create([
+            'nombre_categoria' => $request->nombre_categoria
+        ]);
+
+        return back();
     }
 
     /**

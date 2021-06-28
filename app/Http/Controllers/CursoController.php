@@ -23,17 +23,6 @@ class CursoController extends Controller
         return view('index', ['cursos' => $cursos]);
     }
 
-    public function welcomeCurso(){
-        $categorias = DB::table('categorias')->select('id', 'nombre_categoria')->get();
-
-        return view('create', ['categorias' => $categorias]);
-    }
-
-    public function welcomeCategoria(){
-
-        return view('create_categoria');
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +30,9 @@ class CursoController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = DB::table('categorias')->select('id', 'nombre_categoria')->get();
+
+        return view('create', ['categorias' => $categorias]);
     }
 
     /**

@@ -55,6 +55,30 @@
             </ul>
         </div>
       </nav>
+
+      <div class="text">
+        <h1 class="text-center pt-4">Agregar categoria</h1>
+      </div>
+
+      <div class="container">
+        <div class="row mb-3 pt-4">
+            <div class="col-sm-8 mx-auto">
+                <div class="card border-0 shadow  pl-3">
+                    <div class="card-body">
+                    <form action="{{ route('categoria') }}" method="POST" class="row g-3 needs-validation">
+                        <div class="col col-6">
+                            <input type="text" class="form-control" name="nombre_categoria" placeholder="Name" autocomplete="off">
+                        </div>
+                        <div class="col col-6">
+                            @csrf
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
