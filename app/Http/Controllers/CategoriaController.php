@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use App\Curso;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -36,7 +37,7 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         Categoria::create([
-            'nombre_categoria' => $request->nombre_categoria
+            'nombre_categoria' => $request->name
         ]);
 
         return back();

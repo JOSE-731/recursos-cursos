@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Categoria;
 use App\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -43,7 +42,23 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          //Creamos una variable y le pasamos lo que traemos por reques
+
+        //$datosEmpleados=request()->all();
+        $datosCursos=request()->except('_token');
+
+        //Guardar la imagen
+
+        if($request->hasFile('imagen')){
+            $datosCursos['imagen']=$request->file('imagen')->store('uploads','public');
+        }
+
+     
+        //Guardamos en la bd los valores que treamoes por request
+        Curso::insert($datosCursos);
+     
+
+        return back();
     }
 
     /**

@@ -67,7 +67,7 @@
                     <div class="card-body">
                     <form action="{{ route('categoria') }}" method="POST" class="row g-3 needs-validation">
                         <div class="col col-6">
-                            <input type="text" class="form-control" name="nombre_categoria" placeholder="Name" autocomplete="off">
+                            <input type="text" class="form-control" name="name" placeholder="Name" autocomplete="off">
                         </div>
                         <div class="col col-6">
                             @csrf
