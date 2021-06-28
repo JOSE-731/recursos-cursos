@@ -32,7 +32,7 @@
       <div class="container pt-4">
         <div class="row">
           @foreach($cursos as $value)
-          <div class="col col-4 pt-2">
+          <div class="col col-3 pt-2 d-flex justify-content-between">
             <div class="card" style="width: 18rem;">
               <img src="{{ asset('storage').'/'.$value->imagen }}" class="card-img-top" alt="imagen del curso">
               <div class="card-body">

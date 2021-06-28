@@ -29,6 +29,22 @@
           </form>
         </div>
       </nav>
+
+      <div class="container pt-4">
+        <div class="row">
+          @foreach($backend as $value)
+          <div class="col col-3 pt-2 d-flex justify-content-between">
+            <div class="card" style="width: 18rem;">
+              <img src="{{ asset('storage').'/'.$value->imagen }}" class="card-img-top" alt="imagen del curso">
+              <div class="card-body">
+                <h5 class="card-title">{{ $value->nombre_curso }}</h5>
+                <a href="{{ $value->direccion_url }}" class="btn btn-primary">Acceder</a>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
