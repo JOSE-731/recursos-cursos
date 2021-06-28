@@ -65,7 +65,7 @@
               <div class="col-sm-8 mx-auto mt-2">
                   <div class="card border-0 shadow">
                       <div class="card-body">
-                        <form action="{{ route('cursos') }}" method="POST" class="row g-3 needs-validation">
+                        <form action="{{ route('cursos') }}" method="POST" class="row g-3 needs-validation" enctype="multipart/form-data">
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" name="nombre_curso" placeholder="NAME" autocomplete="off" required>
                             </div>
@@ -77,7 +77,7 @@
                                 <input type="text" class="form-control" name="idioma" placeholder="IDIOMA" autocomplete="off" required>
                             </div>
                             <div class="col-sm-6">
-                                <select name="id_categoria" class="form-select form-control" aria-label="Default select example" required>
+                                <select name="id_categoria" class="form-select form-control"  aria-label="Default select example" required>
                                     <option value="">-- CATEGORIA -</option>
                                     @foreach($categorias as $value)
                                       <option value="{{$value->id  }}">{{ $value->nombre_categoria}}</option>

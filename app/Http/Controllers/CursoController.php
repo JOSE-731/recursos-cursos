@@ -50,9 +50,8 @@ class CursoController extends Controller
         //Guardar la imagen
 
         if($request->hasFile('imagen')){
-            $datosCursos['imagen']=$request->file('imagen')->store('uploads','public');
+            $datosCursos['imagen']=$request->file('imagen')->store('uploads', 'public');
         }
-
      
         //Guardamos en la bd los valores que treamoes por request
         Curso::insert($datosCursos);
