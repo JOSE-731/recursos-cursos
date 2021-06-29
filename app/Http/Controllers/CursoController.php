@@ -38,9 +38,10 @@ class CursoController extends Controller
      */
     public function create()
     {
+        $cursos = DB::table('cursos')->select('id', 'nombre_curso', 'direccion_url')->get();
         $categorias = DB::table('categorias')->select('id', 'nombre_categoria')->get();
 
-        return view('create', ['categorias' => $categorias]);
+        return view('create', compact('categorias', 'cursos'));
     }
 
     /**
@@ -111,7 +112,8 @@ class CursoController extends Controller
      */
     public function destroy(Curso $curso)
     {
-        //
+        $curso->delete();
+        return back();
     }
 
     public function frontend (Request $request){

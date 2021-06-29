@@ -40,3 +40,4 @@ Route::delete('delete/{categoria}', 'CategoriaController@destroy')->name('destro
 //Rutas de los cursos
 Route::get('create/cursos', 'CursoController@create')->middleware('auth');
 Route::post('create/store/cursos', 'CursoController@store')->name('cursos')->middleware('auth');
+Route::delete('deletew/{curso}', 'CursoController@destroy')->name('deletew')->middleware('auth');
