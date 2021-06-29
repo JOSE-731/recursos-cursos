@@ -23,8 +23,8 @@
                 <a class="nav-link text-danger" href="backend">BACKEND<span class="sr-only">(current)</span></a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <form action="{{route('frontend') }}" method="get" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" required autocomplete="off">
             <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
@@ -32,6 +32,9 @@
 
       <div class="container pt-4">
         <div class="row">
+          @if(count($frontend)<=0)
+           <h1>No hay resultados</h1>
+          @else
           @foreach($frontend as $value)
           <div class="col col-3 pt-2 d-flex justify-content-between">
             <div class="card" style="width: 18rem;">
@@ -43,6 +46,7 @@
             </div>
           </div>
           @endforeach
+          @endif
         </div>
       </div>
 

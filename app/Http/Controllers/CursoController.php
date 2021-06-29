@@ -14,12 +14,21 @@ class CursoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //Obtengo el nombre, imagen url y idioma de el curso
-        $cursos = DB::table('cursos')->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')->get();
+        //Obtenemos el campo search que tiene los datos que se van a buscar
+        //Metodo trim para borrar los espacios
+        $data = trim($request->get('search'));
 
-        return view('index', ['cursos' => $cursos]);
+        //Se usa like para coincidencias 
+        $cursos = DB::table('cursos')
+                      ->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')
+                      ->where('nombre_curso', 'LIKE', '%'.$data.'%')->get();
+
+        // //Obtengo el nombre, imagen url y idioma de el curso
+        // $cursos = DB::table('cursos')->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')->get();
+
+        return view('index', compact('cursos'));
     }
 
     /**
@@ -105,16 +114,32 @@ class CursoController extends Controller
         //
     }
 
-    public function frontend (){
+    public function frontend (Request $request){
 
-        $frontend = DB::table('cursos')->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')->where('id_categoria', '=', 1)->get();
+        $data = trim($request->get('search'));
+
+        $frontend = DB::table('cursos')
+                        ->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')
+                        ->where('id_categoria', '=', 1, 'AND', 'nombre_curso', 'LIKE', '%'.$data.'%')
+                        ->Where('nombre_curso', 'LIKE', '%'.$data.'%')
+                        ->get();
+
+                        //->where('nombre_curso', 'LIKE', '%'.$data.'%')->get();
 
         return view('frontend', ['frontend' => $frontend]);
     }
 
-    public function backend (){
+    public function backend (Request $request){
 
-        $backend =  DB::table('cursos')->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')->where('id_categoria', '=', 2)->get();
+        $data = trim($request->get('search'));
+
+        $backend = DB::table('cursos')
+                        ->select('nombre_curso', 'imagen', 'direccion_url', 'idioma')
+                        ->where('id_categoria', '=', 2, 'AND', 'nombre_curso', 'LIKE', '%'.$data.'%')
+                        ->Where('nombre_curso', 'LIKE', '%'.$data.'%')
+                        ->get();
+
+                        //->where('nombre_curso', 'LIKE', '%'.$data.'%')->get();
 
         return view('backend', ['backend' => $backend]);
     }

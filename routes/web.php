@@ -21,11 +21,11 @@ Route::get('/', function () {
 
 
 //Muestra todos los cursos
-Route::get('index', 'CursoController@index');
+Route::get('index', 'CursoController@index')->name('index');
 
 //Muestra todos los cursos segun la categoria que pertenezcan
-Route::get('frontend', 'CursoController@frontend');
-Route::get('backend', 'CursoController@backend');
+Route::get('frontend', 'CursoController@frontend')->name('frontend');
+Route::get('backend', 'CursoController@backend')->name('backend');
 
 //Rutas del login
 Auth::routes();

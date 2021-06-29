@@ -23,14 +23,19 @@
                 <a class="nav-link text-danger" href="backend">BACKEND<span class="sr-only">(current)</span></a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <form action="{{route('index') }}" method="get" class="form-inline my-2 my-lg-0">
+            @csrf
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" required autocomplete="off">
             <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
       </nav>
+
       <div class="container pt-4">
         <div class="row">
+          @if(count($cursos)<=0)
+            <h1>No hay resultados</h1>
+          @else
           @foreach($cursos as $value)
           <div class="col col-3 pt-2 d-flex justify-content-between">
             <div class="card" style="width: 18rem;">
@@ -42,8 +47,10 @@
             </div>
           </div>
           @endforeach
+          @endif
         </div>
       </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
