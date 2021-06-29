@@ -25,7 +25,8 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view('create_categoria');
+        $categorias = Categoria::all();
+        return view('create_categoria', compact('categorias'));
     }
 
     /**
@@ -85,6 +86,7 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $categoria)
     {
-        //
+        $categoria->delete();
+        return back();
     }
 }

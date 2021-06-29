@@ -79,6 +79,47 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row  mb-3">
+              <div class="col-sm-8 mx-auto mt-2">
+                  <div class="card border-0 shadow">
+                      <div class="card-body">
+                          
+                          <table class="table thead-dark">
+                              <thead>
+                                  <tr>
+                                      <th>ID</th>
+                                      <th>NOMBRE</th>
+                                      <th>ACCION</th>
+                                      <th>&nbsp;</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  @foreach ($categorias as $datos )
+                                  <tr>
+                                      <td>{{$datos->id }}</td>
+                                      <td>{{$datos->nombre_categoria }}</td>
+                                      <td>
+                                          <form action="{{route('destroy', $datos)}}" method="POST">
+                                              @method('DELETE')
+                                              @csrf
+                                              <input type="submit"
+                                              value="Eliminar"
+                                              class="btn btn-sm btn-danger"
+                                              onclick="return confirm('¿Desea Eliminar... ?')"
+                                              >
+                                          </form>
+                                      </td>
+                                  </tr>
+                                 @endforeach
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

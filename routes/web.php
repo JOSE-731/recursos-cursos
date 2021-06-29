@@ -35,6 +35,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Rutas de las categorias
 Route::get('create/categorias', 'CategoriaController@create')->middleware('auth');
 Route::post('create/store/categorias', 'CategoriaController@store')->name('categoria')->middleware('auth');
+Route::delete('delete/{categoria}', 'CategoriaController@destroy')->name('destroy')->middleware('auth');
 
 //Rutas de los cursos
 Route::get('create/cursos', 'CursoController@create')->middleware('auth');
